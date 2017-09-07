@@ -26,7 +26,7 @@ $(document).ready(function(){
   function routes(url) {
 
     switch (url) {
-      case "#history":
+      case "history":
         viewHistoryPage();
         break;
       default:
@@ -37,10 +37,9 @@ $(document).ready(function(){
 
   function hashchanged(){
     var hash = location.hash.replace( /^#/, '' );
-    routs(hash);
+    routes(hash);
   }
 
-  $(window).hashchange(hashchanged);
 
   function viewHistoryPage() {
     $('#sc-history').toggle('slide', {direction:'left'}, 700);
@@ -64,6 +63,8 @@ $(document).ready(function(){
       $('.navhistory').toggle('slide', {direction:'left'}, 700);
   });
 
-  hashchanged();
+  $(window).on('hashchange', function(){
+    hashchanged();
+  }).trigger('hashchange');
 
  });

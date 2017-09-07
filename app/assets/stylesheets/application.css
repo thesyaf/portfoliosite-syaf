@@ -42,6 +42,9 @@
     margin: auto;
     padding-top: 200px;
   }
+  .containery .content-area {
+    padding-top: 90px;
+  }
 }
 
 .mainimage {
@@ -131,7 +134,19 @@
 
 }
 
+/*history content*/
+.card {
+  border: 0;
+  background-color: black;
+  flex-direction: row;
+  margin: 5px 0;
+}
 
+.card-img-top {
+  max-width: 130px;
+  max-height: 130px;
+  border-radius: calc(.25rem - 1px);
+}
 
 /*contact screen content*/
 .github {

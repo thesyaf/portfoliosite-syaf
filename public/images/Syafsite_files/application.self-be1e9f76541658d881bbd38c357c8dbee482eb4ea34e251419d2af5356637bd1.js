@@ -10,9 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require turbolinks
-//= require_tree .
+
+
+
 
 
 
@@ -69,17 +69,6 @@ $(document).ready(function(){
     $('.navhistory').toggle('slide', {direction:'left'}, 700);
     $('.navprojects').addClass('back');
   }
-
-
-  $('.g').on('click touch', function () {
-    $('.b').toggle();
-    $('.s').toggle();
-  });
-
-  $('.h').on('click touch', function () {
-    $('.j').toggle();
-    $('.s').toggle();
-  });
 
 
 

@@ -29,6 +29,12 @@ $(document).ready(function(){
       case "history":
         viewHistoryPage();
         break;
+      case "contact":
+        viewContactPage();
+        break;
+      case "projects":
+        viewProjectsPage();
+        break;
       default:
         viewHomepage();
     }
@@ -47,20 +53,31 @@ $(document).ready(function(){
     $('.navprojects').toggle('slide', {direction:'right'}, 700);
   }
 
+  function viewContactPage() {
+    $('#sc-contact').toggle('slide', {direction:'down'}, 700);
+    $('.navhistory').toggle('slide', {direction:'left'}, 700);
+    $('.navprojects').toggle('slide', {direction:'right'}, 700);
+  }
+
+  function viewProjectsPage() {
+    $('#sc-projects').toggle('slide', {direction:'right'}, 700);
+    $('.navcontact').toggle('slide', {direction:'down'}, 700);
+    $('.navhistory').toggle('slide', {direction:'left'}, 700);
+  }
+
+
+
+
   $(".navhistory").on('click touch', function () {
     window.location.replace("#history");
   });
 
   $(".navcontact").on('click touch', function () {
-      $('#sc-contact').toggle('slide', {direction:'down'}, 700);
-      $('.navhistory').toggle('slide', {direction:'left'}, 700);
-      $('.navprojects').toggle('slide', {direction:'right'}, 700);
+    window.location.replace("#contact");
   });
 
   $(".navprojects").on('click touch', function () {
-      $('#sc-projects').toggle('slide', {direction:'right'}, 700);
-      $('.navcontact').toggle('slide', {direction:'down'}, 700);
-      $('.navhistory').toggle('slide', {direction:'left'}, 700);
+    window.location.replace("#projects");
   });
 
   $(window).on('hashchange', function(){

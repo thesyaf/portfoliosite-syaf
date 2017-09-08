@@ -15,14 +15,9 @@
 //= require_tree .
 
 
-
-
- // Bind the event.
-
-
-
 $(document).ready(function(){
 
+  // change the views based on url peramiter
   function routes(url) {
 
     switch (url) {
@@ -82,17 +77,13 @@ $(document).ready(function(){
   });
 
 
-
-
   $('.back').on('click touch', function(){
     $(this).removeClass('back');
     window.location.replace( /^#/, '' );
   })
 
-
   $(".navhistory:not(back)").on('click touch', function () {
     window.location.replace("#history");
-
   });
 
   $(".navcontact:not(back)").on('click touch', function () {
@@ -103,6 +94,7 @@ $(document).ready(function(){
     window.location.replace("#projects");
   });
 
+  // listen for url changes and fire the hash change function
   $(window).on('hashchange', function(){
     hashchanged();
   }).trigger('hashchange');

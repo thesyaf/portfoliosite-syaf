@@ -25,23 +25,29 @@
   color: white;
   background-size: cover;
   position: absolute;
-  top: 0px;
+  top: 23px;
   right: 0px;
   left: 0;
+  height: -webkit-fill-available;
   display: none;
 }
 
 .containerz {
   background-color: black;
   color: white;
-  height:100vh;
   position: absolute;
-  top: 0px;
+  top: 23px;
   right: 0px;
   left: 0;
   display: none;
+  height: -webkit-fill-available;
 }
 
+@media (min-width: 576px) {
+  .containerz {
+    height:100vh;
+  }
+}
 .content-area {
     padding: 30px;
 }
@@ -88,6 +94,8 @@
 .navibox {
   display: flex;
   justify-content: space-around;
+  color: grey;
+  z-index: 30;
 }
 
 @media (min-width: 576px) {
@@ -143,7 +151,7 @@
   font-family: helvetica;
   line-height: 0.7;
   font-weight: bolder;
-
+  color: white
 }
 
 /*history content*/
@@ -152,15 +160,39 @@
   background-color: black;
   flex-direction: row;
   margin: 5px 0;
+  font-size: 1em;
+}
+
+.history .card h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.history .card-body {
+  padding: 1.25rem;
 }
 
 .card-img-left {
-  max-width: 130px;
-  max-height: 130px;
+  max-width: 70px;
+  max-height: 70px;
   border-radius: calc(.25rem - 1px);
+  margin-top: 1.25em;
 }
 
+@media (min-width: 576px) {
+  .card-img-left {
+    max-width: 130px;
+    max-height: 130px;
+    border-radius: calc(.25rem - 1px);
+  }
+}
+
+
 /*contact screen content*/
+.contact-links:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .github {
   letter-spacing: 3.23vw
 }
@@ -204,7 +236,9 @@
   display:none;
 }
 
-/*glitch*/
+
+
+/*glitch effects*/
 
 
 @keyframes noise-anim {
@@ -357,4 +391,27 @@
   overflow: hidden;
   clip: rect(0, 900px, 0, 0);
   animation: noise-anim-2 2s infinite linear alternate-reverse;
+}
+
+/*wiggle wiggle wiggle*/
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+.contact-links:hover,
+.contact-links:focus {
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
 }

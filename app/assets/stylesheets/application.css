@@ -25,7 +25,7 @@
   color: white;
   background-size: cover;
   position: absolute;
-  top: 23px;
+  top: 0;
   right: 0px;
   left: 0;
   display: none;
@@ -42,8 +42,8 @@
   background-color: black;
   color: white;
   position: absolute;
-  top: 23px;
-  right: 0px;
+  top: 0;
+  right: 0;
   left: 0;
   display: none;
   height: -webkit-fill-available;
@@ -60,8 +60,8 @@
   color: white;
   background-size: cover;
   position: absolute;
-  top: 23px;
-  right: 0px;
+  top: 0;
+  right: 0;
   left: 0;
   display: none;
   height: -webkit-fill-available;
@@ -73,6 +73,12 @@
   }
 }
 
+.close-icon {
+  width: 40px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
 
 .content-area {
     padding: 30px;
@@ -135,6 +141,10 @@
     font-family: courier;
     color: grey;
     z-index: 30;
+  }
+
+  .mobile-menu {
+    display: none;
   }
 }
 
@@ -255,6 +265,7 @@
   .concon {
     margin-left: 100px;
     padding-top: 120px;
+    max-width: min-content;
   }
 }
 

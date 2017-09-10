@@ -17,7 +17,7 @@
 
 $(document).ready(function(){
 
-  // change the views based on url peramiter
+  // change the views based on url parameter
   function routes(url) {
 
     switch (url) {
@@ -45,7 +45,7 @@ $(document).ready(function(){
   }
 
   function viewHistoryPage() {
-    $('#sc-history').toggle('slide', {direction:'left'}, 700);
+    $('#sc-history').show('slide', {direction:'left'}, 700);
     $('.navcontact').toggle('slide', {direction:'down'}, 700);
     $('.navprojects').toggle('slide', {direction:'right'}, 700);
     $('.navhistory').addClass('back');
@@ -66,31 +66,20 @@ $(document).ready(function(){
   }
 
 
-  $('.g').on('click touch', function () {
-    $('.b').toggle();
-    $('.s').toggle();
-  });
-
-  $('.h').on('click touch', function () {
-    $('.j').toggle();
-    $('.s').toggle();
-  });
-
-
   $('.back').on('click touch', function(){
     $(this).removeClass('back');
     window.location.replace( /^#/, '' );
   })
 
-  $(".navhistory:not(back)").on('click touch', function () {
+  $(".navhistory:not(.back)").on('click touch', function () {
     window.location.replace("#history");
   });
 
-  $(".navcontact:not(back)").on('click touch', function () {
+  $(".navcontact:not(.back)").on('click touch', function () {
     window.location.replace("#contact");
   });
 
-  $(".navprojects:not(back)").on('click touch', function () {
+  $(".navprojects:not(.back)").on('click touch', function () {
     window.location.replace("#projects");
   });
 
@@ -98,5 +87,36 @@ $(document).ready(function(){
   $(window).on('hashchange', function(){
     hashchanged();
   }).trigger('hashchange');
+
+
+// mobile nav
+$(".mnav-history").on('click touch', function () {
+  $('#sc-history').toggle('slide', {direction:'down'}, 700);
+  $('.mnav-projects').toggle('slide', {direction:'down'}, 700);
+  $('.mnav-contact').toggle('slide', {direction:'down'}, 700);
+});
+
+$(".mnav-projects").on('click touch', function () {
+  $('#sc-projects').toggle('slide', {direction:'down'}, 700);
+  $('.mnav-history').toggle('slide', {direction:'down'}, 700);
+  $('.mnav-contact').toggle('slide', {direction:'down'}, 700);
+});
+
+$(".mnav-contact").on('click touch', function () {
+  $('#sc-contact').toggle('slide', {direction:'down'}, 700);
+  $('.mnav-projects').toggle('slide', {direction:'down'}, 700);
+  $('.mnav-history').toggle('slide', {direction:'down'}, 700);
+});
+
+// easter egg
+$('.g').on('click touch', function () {
+  $('.b').toggle();
+  $('.s').toggle();
+});
+
+$('.h').on('click touch', function () {
+  $('.j').toggle();
+  $('.s').toggle();
+});
 
  });

@@ -159,14 +159,25 @@ $(document).ready(function(){
 
   // easter egg
   $('.g').on('click touch', function () {
-    $('.b').toggle();
-    $('.s').toggle();
+    if ($('.j').css('display') != 'none'){
+      $('.j').toggle();
+      $('.b').toggle();
+    }
+    else {
+      $('.b').toggle();
+      $('.s').toggle();
+    }
   });
 
   $('.h').on('click touch', function () {
-    $('.j').toggle();
-    $('.s').toggle();
+    if ($('.b').css('display') != 'none'){
+      $('.j').toggle();
+      $('.b').toggle();
+    }
+    else {
+      $('.j').toggle();
+      $('.s').toggle();
+    }
   });
 
-
-});
+}); //document ready

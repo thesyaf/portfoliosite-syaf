@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Ruby on Rails app is my first portfolio website.
 
-Things you may want to cover:
+It utilises HTML, CSS, and JS.
 
-* Ruby version
+Deployed to Google Cloud at http://syaf-site.appspot.com/
 
-* System dependencies
+I intend to return an update this project as my career progresses.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Created as a project for Coder Academy 2017.
